@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="https://sheetdb.io/api/v1/aph7jxaekif7d" id="form">
+        <label for="firstname">Name</label>
+        <input type="text" name="data[firstname]" id="firstname">
+        <button type="submit">Submit</button>
+        <script>
+              var form=document.getElementById('form')
+        form.addEventListener("submit",e=>{
+            e.preventDefault();
+            fetch(form.action,{
+                method:"POST",
+                body: new FormData(document.getElementById("form")),
+            }).then(
+                response =>response.json()
+            ).then((html) => {
+                window.open('thanku.html');
+            });
+        });
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+        </script>
+    </form>
+</body>
+</html>

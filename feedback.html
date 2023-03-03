@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+      
+    <title>Feedback</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+            <img src="logo.jpg" class="img rounded-pill" width="50px">
+        </div>
+    </nav>
+    <div class="cointainer row bg-dark">
+      <form class="row needs-validation text-light m-3" action="https://sheetdb.io/api/v1/cv9nhge00xktc" id="form" method="post" novalidate>
+        <h1 class="dispaly-4"><center><u>Feedback Form</u></center></h1>
+       <div class="container row ">
+        <div class="col-md-4 col-lg-6">
+          <label for="firstname">First Name<font color="red" size="5px">&#42</font></label>
+          <input type="text" class="form-control" id="firstname" name="data[firstname]" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid first name. 
+          </div>
+
+        </div>
+        <div class="col-md-4 col-lg-6">
+          <label for="lastname">Last Name<font color="red" size="5px">&#42</font></label>
+          <input type="text" class="form-control" id="lastname" name="data[lastname]" required>
+          <div class="valid-feedback">
+            Looks goood!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid last name.
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-6">
+          <label for="email">E-Mail<font color="red" size="5px">&#42</font></label>
+          <div class="input-group">
+            <span class="input-group-text">@gmail.com</span>
+           <input type="email" class="form-control" id="email" name="data[email]" required>
+           <div class="valid-feedback">
+             Looks good!
+           </div>
+           <div class="invalid-feedback">
+             Please provide a valid E-mail.
+           </div>
+         </div>
+        </div>
+        <div class="col-md-4 col-lg-6">
+          <label for="phone">Phone No<font color="red" size="5px">&#42</font></label>
+          <input type="number" class="form-control" id="phone" name="data[phone]" required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please provide a valid Phone no.
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-6 ">
+          <label for="rate">Rate Us<font color="red" size="5px">&#42</font></label>
+        
+          <select class="diplay-1 text-warning form-control" id="rate" name="data[rate]" required>
+            <option class="diplay-1 text-warning">&#9733;</i></option>
+            <option class="diplay-1 text-warning">&#9733;&#9733;</option>
+            <option class="diplay-1 text-warning">&#9733;&#9733;&#9733;</option>
+            <option class="diplay-1 text-warning">&#9733;&#9733;&#9733;&#9733;</option>
+            <option class="diplay-1 text-warning">&#9733;&#9733;&#9733;&#9733;&#9733;</option>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              Please Rate Us.
+            </div>
+            <select > 
+        </div>
+        <div class="col-md-4 ">
+          
+          <label for="feedback">Feedback<font color="red" size="5px">&#42</font></label>
+        <textarea class="form-control" id="feedback" placeholder="Please , Help Us To Improve Our Website." name="data[feedback]" required></textarea>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Please Write Something.
+          </div>
+        </div>
+        <div class="btn">
+        <button typE="reset" class="btn btn-outline-danger m-3 active">Reset</button>
+        <button type="submit" class="btn btn-outline-success m-3 active">Submit</button>
+
+      </div>
+       </div>
+      </form>
+    </div>
+    <script>
+      (function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+      var form=document.getElementById('form')
+      form.addEventListener("submit", e =>{
+          e.preventDefault();
+         
+          fetch(form.action,{
+              method:"POST",
+              body: new FormData(document.getElementById('form')),
+          }).then(
+              response =>response.json()
+          ).then((html) => {
+            console.log("Done");
+          });
+      });
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      my
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+
+
+    </script>
+</body>
+</html>
